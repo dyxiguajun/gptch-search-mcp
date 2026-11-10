@@ -1,0 +1,13 @@
+interface:
+  display_name: "中文互联网私域研究"
+  short_description: "自主结合公开资料、中文社区与历史档案，分辨利益关系、独立证据和关键声明"
+  default_prompt: "使用 $private-search-research 自主研究这个问题，按需结合公开资料、中文社区与已有档案，核实关键声明并说明证据与不确定性。"
+
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "gptch-search"
+      description: "GPTCH Search 的本机能力发现、平台搜索与归档读取"
+
+policy:
+  allow_implicit_invocation: true

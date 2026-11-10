@@ -1,0 +1,41 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "gptch-search",
+  "version": "0.5.0",
+  "description": "Personal local research gateway. Verified native Bilibili, Juejin, SegmentFault, Xiaohongshu note-text and Tieba main-post retrieval; isolated platform login selector. Zhihu search and Sogou WeChat article redirects remain access-limited. Discover per-platform capabilities, verification and coverage; cookies never go to AI.",
+  "keywords": [
+    "中文互联网",
+    "私域搜索",
+    "社区研究",
+    "bilibili",
+    "B站",
+    "native-search",
+    "research",
+    "local-archive",
+    "小红书",
+    "贴吧",
+    "中文技术社区",
+    "微信公众号",
+    "platform-login"
+  ],
+  "extensions": {
+    "com.openai": {
+      "requires_local_executor": true,
+      "interface": {
+        "displayName": "GPTCH Search",
+        "shortDescription": "自主混合研究：公开资料、中文社区与本机归档",
+        "longDescription": "模型自主选择来源、关键词、预算和取证深度。已实测B站、掘金、思否及小红书笔记说明、贴吧主帖的原生搜索/归档读取。知乎登录核验已通过，但本轮搜索403停止；微信可由搜狗索引发现公众号文章，跳转受验证限制，客户端搜一搜未接通。首次使用/失效提供本机平台选择及状态列表，Cookie留本机。具体实现和验证范围见get_capabilities；不强制所有搜索经过本网关。",
+        "developerName": "XiGua",
+        "category": "Productivity",
+        "capabilities": [
+          "Read"
+        ],
+        "defaultPrompt": [
+          "帮我调查B站有哪些好的Rawstyle Screech制作教程，我使用FL Studio 20。",
+          "研究最近一周AI Agent的重要技术变化，结合官方公告、GitHub和中文社区讨论。",
+          "分析此前已经归档的视频资料，判断有没有需要补充核实的内容。"
+        ]
+      }
+    }
+  }
+}
